@@ -5,6 +5,8 @@ from django.utils.text import slugify
 import cloudinary
 import cloudinary.models
 
+from .constants import PRODUCT_STATIC_IMAGE_FILENAME
+
 
 class ProductCategory(models.Model):
     name = models.CharField(_("Назва"), max_length=200)
@@ -87,6 +89,15 @@ class Product(models.Model):
         images = self.images.all()
         if images:
             return images[0].image.url
+        return None
+
+    def get_display_image_path(self):
+        """Повертає шлях для static (img/xxx.webp) для fallback у каталозі, або None."""
+        if self.image:
+            return None
+        filename = PRODUCT_STATIC_IMAGE_FILENAME.get(self.slug)
+        if filename:
+            return f"img/{filename}"
         return None
 
 

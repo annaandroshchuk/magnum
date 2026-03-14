@@ -57,6 +57,12 @@
                  loading="lazy"
                  width="320" height="240"
                  itemprop="image">
+          {% elif product.get_display_image_path %}
+            <img src="{% static product.get_display_image_path %}"
+                 alt="{{ product.name }}"
+                 loading="lazy"
+                 width="320" height="240"
+                 itemprop="image">
           {% else %}
             <div class="product-row__img-placeholder" aria-hidden="true">
               <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
