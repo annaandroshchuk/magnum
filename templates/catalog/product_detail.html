@@ -6,6 +6,8 @@
 {% block og_image %}
 {% if product.get_main_image_url %}
 <meta property="og:image" content="{{ product.get_main_image_url }}">
+{% elif product.get_display_image_path %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static product.get_display_image_path %}">
 {% else %}
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-default.jpg' %}">
 {% endif %}
@@ -80,8 +82,24 @@
                  itemprop="image"
                  id="gallery-main-img">
           </div>
+        {% elif product.get_display_image_path %}
+          <div class="gallery-main">
+            <img src="{% static product.get_display_image_path %}"
+                 alt="{{ product.name }}"
+                 width="700" height="500"
+                 itemprop="image"
+                 id="gallery-main-img">
+          </div>
+        {% else %}
+          <div class="gallery-main gallery-main--placeholder" aria-hidden="true">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="76" height="56" rx="4" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="22" cy="22" r="8" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 42 L18 28 L30 40 L44 24 L78 58" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
         {% endif %}
-        {% if images %}
+        {% if images or product.image or product.get_display_image_path %}
           <div class="gallery-thumbs" role="list" aria-label="{% trans 'Зображення товару' %}">
             {% if product.image %}
               <button class="thumb-btn thumb-btn--active"
@@ -89,6 +107,13 @@
                       aria-label="{% trans 'Фото 1' %}"
                       role="listitem">
                 <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy" width="80" height="60">
+              </button>
+            {% elif product.get_display_image_path %}
+              <button class="thumb-btn thumb-btn--active"
+                      data-src="{% static product.get_display_image_path %}"
+                      aria-label="{% trans 'Фото 1' %}"
+                      role="listitem">
+                <img src="{% static product.get_display_image_path %}" alt="{{ product.name }}" loading="lazy" width="80" height="60">
               </button>
             {% endif %}
             {% for img in images %}
@@ -171,6 +196,10 @@
         {% if rel.image %}
           <div class="preview-card__img">
             <img src="{{ rel.image.url }}" alt="{{ rel.name }}" loading="lazy" width="400" height="300">
+          </div>
+        {% elif rel.get_display_image_path %}
+          <div class="preview-card__img">
+            <img src="{% static rel.get_display_image_path %}" alt="{{ rel.name }}" loading="lazy" width="400" height="300">
           </div>
         {% else %}
           <div class="preview-card__img preview-card__img--placeholder" aria-hidden="true">
