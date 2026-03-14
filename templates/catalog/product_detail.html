@@ -1,0 +1,194 @@
+{% extends "base.html" %}
+{% load i18n static %}
+
+{% block og_type %}product{% endblock %}
+
+{% block og_image %}
+{% if product.get_main_image_url %}
+<meta property="og:image" content="{{ product.get_main_image_url }}">
+{% else %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-default.jpg' %}">
+{% endif %}
+{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ product.name|escapejs }}",
+  "description": "{{ product.description|striptags|escapejs|truncatechars:500 }}",
+  {% if product.get_main_image_url %}
+  "image": ["{{ product.get_main_image_url }}"],
+  {% endif %}
+  "sku": "{{ product.sku }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ product.brand }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    {% if product.price %}
+    "price": "{{ product.price }}",
+    "priceCurrency": "{{ product.currency }}",
+    {% else %}
+    "price": "0",
+    "priceCurrency": "UAH",
+    {% endif %}
+    "availability": "{{ product.get_schema_availability }}",
+    "url": "{{ request.build_absolute_uri }}",
+    "seller": {
+      "@type": "Organization",
+      "name": "Корпорація Магнум",
+      "url": "{{ request.scheme }}://{{ request.get_host }}"
+    }
+  }
+}
+</script>
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/product.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<article class="product-detail" itemscope itemtype="https://schema.org/Product">
+
+  <section class="product-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="{% trans 'Навігаційний шлях' %}">
+        <a href="{% url 'core:landing' %}">{% trans "Головна" %}</a>
+        <span aria-hidden="true">/</span>
+        <a href="{% url 'catalog:catalog' %}">{% trans "Каталог" %}</a>
+        {% if product.category %}
+          <span aria-hidden="true">/</span>
+          <a href="{% url 'catalog:category' product.category.slug %}">{{ product.category.name }}</a>
+        {% endif %}
+        <span aria-hidden="true">/</span>
+        <span aria-current="page">{{ product.name }}</span>
+      </nav>
+    </div>
+
+    <div class="product-hero-inner">
+      <div class="product-gallery">
+        {% if product.image %}
+          <div class="gallery-main">
+            <img src="{{ product.image.url }}"
+                 alt="{{ product.name }}"
+                 width="700" height="500"
+                 itemprop="image"
+                 id="gallery-main-img">
+          </div>
+        {% endif %}
+        {% if images %}
+          <div class="gallery-thumbs" role="list" aria-label="{% trans 'Зображення товару' %}">
+            {% if product.image %}
+              <button class="thumb-btn thumb-btn--active"
+                      data-src="{{ product.image.url }}"
+                      aria-label="{% trans 'Фото 1' %}"
+                      role="listitem">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" loading="lazy" width="80" height="60">
+              </button>
+            {% endif %}
+            {% for img in images %}
+              <button class="thumb-btn"
+                      data-src="{{ img.image.url }}"
+                      aria-label="{{ img.alt_text|default:product.name }}"
+                      role="listitem">
+                <img src="{{ img.image.url }}" alt="{{ img.alt_text|default:product.name }}" loading="lazy" width="80" height="60">
+              </button>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="product-info">
+        {% if product.category %}
+          <a href="{% url 'catalog:category' product.category.slug %}" class="product-cat-link" itemprop="category">
+            {{ product.category.name }}
+          </a>
+        {% endif %}
+
+        <h1 class="product-title" itemprop="name">{{ product.name }}</h1>
+
+        {% if product.short_description %}
+          <p class="product-lead" itemprop="description">{{ product.short_description }}</p>
+        {% endif %}
+
+        <div class="product-meta-row">
+          <span class="product-sku">SKU: <strong itemprop="sku">{{ product.sku }}</strong></span>
+          <span class="product-brand">{% trans "Бренд" %}: <strong itemprop="brand">{{ product.brand }}</strong></span>
+          <span class="product-avail
+            {% if product.availability == 'InStock' %}product-avail--in{% endif %}
+            {% if product.availability == 'OutOfStock' %}product-avail--out{% endif %}
+            {% if product.availability == 'PreOrder' %}product-avail--pre{% endif %}
+          ">{{ product.get_availability_display }}</span>
+        </div>
+
+        {% if product.price %}
+          <div class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+            <span itemprop="price" content="{{ product.price }}">
+              {{ product.price }} <span itemprop="priceCurrency">{{ product.currency }}</span>
+            </span>
+          </div>
+        {% endif %}
+
+        <div class="product-actions">
+          <a href="{% url 'core:landing' %}#contact" class="btn btn--primary btn--full">
+            {% trans "Замовити / Дізнатися ціну" %}
+          </a>
+          <a href="tel:+380733777333" class="btn btn--outline btn--full">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.64 3.33 2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 7.05 7.05l.96-.96a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            +38 073 3 777 333
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {% if product.description %}
+  <section class="product-description" aria-labelledby="desc-title">
+    <div class="container">
+      <h2 id="desc-title">{% trans "Опис продукту" %}</h2>
+      <div class="product-description__body">
+        {{ product.description|linebreaks }}
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
+  {% if related %}
+  <section class="related-products" aria-labelledby="related-title">
+    <div class="container">
+      <h2 id="related-title">{% trans "Схожі товари" %}</h2>
+    </div>
+    <div class="preview-strip">
+      {% for rel in related %}
+      <a href="{{ rel.get_absolute_url }}" class="preview-card">
+        {% if rel.image %}
+          <div class="preview-card__img">
+            <img src="{{ rel.image.url }}" alt="{{ rel.name }}" loading="lazy" width="400" height="300">
+          </div>
+        {% else %}
+          <div class="preview-card__img preview-card__img--placeholder" aria-hidden="true">
+            <svg viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="76" height="56" rx="4" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+        {% endif %}
+        <div class="preview-card__body">
+          <h3 class="preview-card__name">{{ rel.name }}</h3>
+          <span class="preview-card__cta">{% trans "Детальніше" %} →</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </section>
+  {% endif %}
+
+</article>
+
+{% endblock %}

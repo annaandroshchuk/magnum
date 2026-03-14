@@ -1,0 +1,46 @@
+{% load i18n %}
+
+<form class="contact-form"
+      hx-post="{% url 'core:contact_submit' %}"
+      hx-target="#contact-form-wrap"
+      hx-swap="innerHTML"
+      novalidate>
+  {% csrf_token %}
+  {{ form.website }}
+
+  <div class="form-group">
+    {{ form.name }}
+    {% if form.name.errors %}
+      <span class="form-error">{{ form.name.errors.0 }}</span>
+    {% endif %}
+  </div>
+
+  <div class="form-row">
+    <div class="form-group">
+      {{ form.phone }}
+      {% if form.phone.errors %}
+        <span class="form-error">{{ form.phone.errors.0 }}</span>
+      {% endif %}
+    </div>
+    <div class="form-group">
+      {{ form.email }}
+      {% if form.email.errors %}
+        <span class="form-error">{{ form.email.errors.0 }}</span>
+      {% endif %}
+    </div>
+  </div>
+
+  <div class="form-group">
+    {{ form.message }}
+    {% if form.message.errors %}
+      <span class="form-error">{{ form.message.errors.0 }}</span>
+    {% endif %}
+  </div>
+
+  <button type="submit" class="btn btn--primary btn--full">
+    <span class="btn-text">{% trans "Надіслати заявку" %}</span>
+    <span class="btn-icon" aria-hidden="true">→</span>
+  </button>
+
+  <p class="form-privacy">{% trans "Надсилаючи заявку, ви погоджуєтесь на обробку персональних даних." %}</p>
+</form>

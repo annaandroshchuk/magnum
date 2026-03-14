@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 40">
+  <rect x="0" y="4" width="32" height="32" rx="6" fill="#e85d26"/>
+  <text x="16" y="26" font-family="Arial,sans-serif" font-weight="800" font-size="22" fill="white" text-anchor="middle">M</text>
+  <text x="44" y="28" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#1a3a5c" letter-spacing="2">MAGNUM</text>
+</svg>

@@ -1,0 +1,57 @@
+{% load i18n static %}
+{% get_current_language as CURRENT_LANG %}
+{% get_available_languages as LANGUAGES_LIST %}
+
+<title>{% block title %}{{ page_title|default:"Magnum — Виробництво упаковки" }}{% endblock %}</title>
+
+<meta name="description" content="{{ meta_description|default:'' }}">
+{% if product %}<meta name="keywords" content="{{ product.meta_keywords }}">{% endif %}
+<meta name="robots" content="index, follow">
+<meta name="author" content="Корпорація Магнум">
+
+<link rel="canonical" href="{{ request.build_absolute_uri }}">
+
+{% for lang_code, lang_name in LANGUAGES_LIST %}
+  <link rel="alternate" hreflang="{{ lang_code }}" href="{{ request.scheme }}://{{ request.get_host }}/{{ lang_code }}{{ request.path|slice:'3:' }}">
+{% endfor %}
+<link rel="alternate" hreflang="x-default" href="{{ request.scheme }}://{{ request.get_host }}/uk{{ request.path|slice:'3:' }}">
+
+<meta property="og:type" content="{% block og_type %}website{% endblock %}">
+<meta property="og:title" content="{{ page_title|default:'Magnum — Виробництво упаковки' }}">
+<meta property="og:description" content="{{ meta_description|default:'' }}">
+<meta property="og:url" content="{{ request.build_absolute_uri }}">
+<meta property="og:locale" content="{% if CURRENT_LANG == 'uk' %}uk_UA{% else %}en_US{% endif %}">
+<meta property="og:site_name" content="Корпорація Магнум">
+{% block og_image %}
+<meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-default.jpg' %}">
+{% endblock %}
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ page_title|default:'Magnum' }}">
+<meta name="twitter:description" content="{{ meta_description|default:'' }}">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Корпорація Магнум",
+  "url": "{{ request.scheme }}://{{ request.get_host }}",
+  "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.svg' %}",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+380733777333",
+    "contactType": "customer service",
+    "areaServed": "UA",
+    "availableLanguage": ["Ukrainian", "English"]
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "вул. Волинська, 46",
+    "addressLocality": "Дніпро",
+    "postalCode": "49102",
+    "addressCountry": "UA"
+  },
+  "email": "magnum_tvk@ukr.net",
+  "telephone": "+380733777333"
+}
+</script>

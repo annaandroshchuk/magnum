@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: magnum-site
+    runtime: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn config.wsgi:application --bind 0.0.0.0:$PORT --workers 2 --timeout 60"
+    healthCheckPath: /healthz
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: ".onrender.com,magnum-tpc.com,www.magnum-tpc.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://magnum-tpc.com,https://www.magnum-tpc.com"
+      - key: DATABASE_URL
+        fromDatabase:
+          name: magnum-db
+          property: connectionString
+      - key: CLOUDINARY_URL
+        sync: false
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: EMAIL_HOST_USER
+        sync: false
+      - key: EMAIL_HOST_PASSWORD
+        sync: false
+      - key: DEFAULT_FROM_EMAIL
+        sync: false
+      - key: PYTHON_VERSION
+        value: "3.12.0"
+      - key: SECURE_SSL_REDIRECT
+        value: "True"
+
+databases:
+  - name: magnum-db
+    databaseName: magnum
+    user: magnum

@@ -1,0 +1,45 @@
+{% load i18n static %}
+{% get_current_language as CURRENT_LANG %}
+
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+    <a href="{% url 'core:landing' %}" class="logo" aria-label="Magnum — {% trans 'Головна' %}">
+      <span class="logo-mark">M</span>
+      <span class="logo-text">MAGNUM</span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="{% trans 'Меню' %}" aria-expanded="false" aria-controls="main-nav">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </button>
+  </div>
+</header>
+
+<nav class="main-nav" id="main-nav" role="navigation" aria-label="{% trans 'Головна навігація' %}">
+  <ul class="nav-list">
+    <li><a href="{% url 'core:landing' %}" class="nav-link">{% trans "Головна" %}</a></li>
+    <li><a href="{% url 'catalog:catalog' %}" class="nav-link">{% trans "Каталог" %}</a></li>
+    <li><a href="{% url 'core:landing' %}#about" class="nav-link">{% trans "Про нас" %}</a></li>
+    <li><a href="{% url 'core:landing' %}#contact" class="nav-link nav-link--cta">{% trans "Замовити" %}</a></li>
+  </ul>
+
+  <div class="lang-switcher" role="navigation" aria-label="{% trans 'Вибір мови' %}">
+    <form action="{% url 'set_language' %}" method="post" id="lang-form">
+      {% csrf_token %}
+      <input type="hidden" name="next" id="lang-next" value="{{ request.path }}">
+      <button type="submit" name="language" value="uk"
+              class="lang-btn {% if CURRENT_LANG == 'uk' %}lang-btn--active{% endif %}"
+              aria-current="{% if CURRENT_LANG == 'uk' %}true{% endif %}">
+        УКР
+      </button>
+      <span class="lang-sep">/</span>
+      <button type="submit" name="language" value="en"
+              class="lang-btn {% if CURRENT_LANG == 'en' %}lang-btn--active{% endif %}"
+              aria-current="{% if CURRENT_LANG == 'en' %}true{% endif %}">
+        EN
+      </button>
+    </form>
+  </div>
+</nav>
+<div class="nav-overlay" id="nav-overlay" aria-hidden="true"></div>

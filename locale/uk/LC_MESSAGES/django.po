@@ -1,0 +1,39 @@
+# Ukrainian translations for Magnum site
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: uk\n"
+
+msgid "Українська"
+msgstr "Українська"
+
+msgid "English"
+msgstr "English"
+
+msgid "Головна"
+msgstr "Головна"
+
+msgid "Каталог"
+msgstr "Каталог"
+
+msgid "Про нас"
+msgstr "Про нас"
+
+msgid "Замовити"
+msgstr "Замовити"
+
+msgid "В наявності"
+msgstr "В наявності"
+
+msgid "Немає в наявності"
+msgstr "Немає в наявності"
+
+msgid "Під замовлення"
+msgstr "Під замовлення"
+
+msgid "Магнум — Виробництво упаковки"
+msgstr "Магнум — Виробництво упаковки"
+
+msgid "Корпорація Магнум — виробництво якісного пакування, пакетів та плівки. Дніпро. Замовте індивідуальне рішення для вашого бізнесу."
+msgstr "Корпорація Магнум — виробництво якісного пакування, пакетів та плівки. Дніпро. Замовте індивідуальне рішення для вашого бізнесу."

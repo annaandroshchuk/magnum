@@ -1,0 +1,354 @@
+# English translations for Magnum site
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+
+msgid "Українська"
+msgstr "Ukrainian"
+
+msgid "English"
+msgstr "English"
+
+msgid "Головна"
+msgstr "Home"
+
+msgid "Каталог"
+msgstr "Catalog"
+
+msgid "Про нас"
+msgstr "About Us"
+
+msgid "Замовити"
+msgstr "Order"
+
+msgid "Меню"
+msgstr "Menu"
+
+msgid "Головна навігація"
+msgstr "Main Navigation"
+
+msgid "Вибір мови"
+msgstr "Language Selection"
+
+msgid "Навігація"
+msgstr "Navigation"
+
+msgid "Навігація в підвалі"
+msgstr "Footer Navigation"
+
+msgid "Контакти"
+msgstr "Contacts"
+
+msgid "Про компанію"
+msgstr "About Company"
+
+msgid "Виробництво якісного пакування"
+msgstr "Quality Packaging Production"
+
+msgid "Всі права захищені."
+msgstr "All rights reserved."
+
+msgid "Головний банер"
+msgstr "Main Banner"
+
+msgid "Власне виробництво · Дніпро"
+msgstr "Own production · Dnipro"
+
+msgid "Упаковка,<br>що захищає<br>ваш бренд"
+msgstr "Packaging<br>that protects<br>your brand"
+
+msgid "Пакети, плівки та коробки від виробника. Флексодрук, індивідуальний дизайн, доставка по Україні."
+msgstr "Bags, films and boxes from the manufacturer. Flexo printing, custom design, delivery across Ukraine."
+
+msgid "Переглянути каталог"
+msgstr "View Catalog"
+
+msgid "Зв'язатися з нами"
+msgstr "Contact Us"
+
+msgid "Що ми виробляємо"
+msgstr "What We Produce"
+
+msgid "Повний цикл виробництва — від розробки макету до доставки готової продукції"
+msgstr "Full production cycle — from design development to delivery of finished products"
+
+msgid "Виробництво пакування"
+msgstr "Packaging Production"
+
+msgid "Пакети різних розмірів і щільності: Wicket, BOPP, LDPE, HDPE, біорозкладні, дой-пак, паперові та картонні."
+msgstr "Bags of various sizes and densities: Wicket, BOPP, LDPE, HDPE, biodegradable, doy-pack, paper and cardboard."
+
+msgid "Флексодрук на плівці"
+msgstr "Flexo Printing on Film"
+
+msgid "Нанесення зображень на плівку та гнучкі матеріали. Повнота кольору, чіткі межі, оптимальний контраст."
+msgstr "Applying images to film and flexible materials. Full color, sharp edges, optimal contrast."
+
+msgid "Конструкторське бюро"
+msgstr "Design Bureau"
+
+msgid "Розробка дизайну упаковки, переддрукарська підготовка макетів. Реалізація технічного задуму проекту."
+msgstr "Packaging design development, pre-press preparation. Implementation of the technical concept."
+
+msgid "Обладнання на замовлення"
+msgstr "Custom Equipment"
+
+msgid "Виготовлення виробничого обладнання, верстатів і конструкцій за вашими кресленнями або з нуля."
+msgstr "Manufacturing of production equipment, machines and structures from your drawings or from scratch."
+
+msgid "Локальна гальваніка"
+msgstr "Local Galvanics"
+
+msgid "Відновлення геометричних характеристик робочих поверхностей без демонтажу за мінімальний час."
+msgstr "Restoration of geometric characteristics of working surfaces without dismantling in minimum time."
+
+msgid "Організація перевезень"
+msgstr "Transport Organization"
+
+msgid "Логістика та доставка продукції по всій Україні. Оперативне виконання замовлень будь-якого обсягу."
+msgstr "Logistics and delivery of products throughout Ukraine. Prompt execution of orders of any volume."
+
+msgid "Популярна продукція"
+msgstr "Popular Products"
+
+msgid "Замовляйте безпосередньо у виробника — без посередників"
+msgstr "Order directly from the manufacturer — no middlemen"
+
+msgid "Детальніше"
+msgstr "More Details"
+
+msgid "Весь каталог"
+msgstr "Full Catalog"
+
+msgid "Про корпорацію"
+msgstr "About the Corporation"
+
+msgid "Magnum — власне виробництво високоякісного пакування у Дніпрі. Ми контролюємо кожен етап: від підготовки макетів до укладання продукції в транспортну упаковку."
+msgstr "Magnum — own production of high-quality packaging in Dnipro. We control every stage: from design preparation to packing products into transport packaging."
+
+msgid "Окрім виробництва упаковки надаємо широкий спектр послуг: конструкторське бюро, флексодрук, гальваніка, організація перевезень. Індивідуальний підхід до кожного клієнта, конфіденційність, суворе дотримання стандартів."
+msgstr "In addition to packaging production, we provide a wide range of services: design bureau, flexo printing, galvanics, transport organization. Individual approach to each client, confidentiality, strict compliance with standards."
+
+msgid "Власне обладнання — без залежності від підрядників"
+msgstr "Own equipment — no dependency on contractors"
+
+msgid "Флексодрук до 8 кольорів"
+msgstr "Flexo printing up to 8 colors"
+
+msgid "Біорозкладні матеріали у каталозі"
+msgstr "Biodegradable materials in catalog"
+
+msgid "Доставка по всій Україні"
+msgstr "Delivery throughout Ukraine"
+
+msgid "Позицій в каталозі"
+msgstr "Catalog positions"
+
+msgid "Власне виробництво"
+msgstr "Own production"
+
+msgid "Зв'яжіться з нами"
+msgstr "Contact Us"
+
+msgid "Залиште заявку — наш менеджер зв'яжеться з вами найближчим часом і відповість на всі запитання."
+msgstr "Leave a request — our manager will contact you shortly and answer all your questions."
+
+msgid "Надіслати заявку"
+msgstr "Send Request"
+
+msgid "Надсилаючи заявку, ви погоджуєтесь на обробку персональних даних."
+msgstr "By submitting the form, you agree to the processing of personal data."
+
+msgid "Дякуємо за вашу заявку!"
+msgstr "Thank you for your request!"
+
+msgid "Наш менеджер зв'яжеться з вами найближчим часом."
+msgstr "Our manager will contact you shortly."
+
+msgid "Каталог продукції — Magnum"
+msgstr "Product Catalog — Magnum"
+
+msgid "Каталог пакувальної продукції Magnum: пакети, плівки, коробки. Власне виробництво у Дніпрі. Доставка по Україні."
+msgstr "Magnum packaging catalog: bags, films, boxes. Own production in Dnipro. Delivery across Ukraine."
+
+msgid "Навігаційний шлях"
+msgstr "Breadcrumb"
+
+msgid "Каталог продукції"
+msgstr "Product Catalog"
+
+msgid "Власне виробництво пакувальних матеріалів — пакети, плівки, коробки. Від 1 кг до великих тиражів."
+msgstr "Own production of packaging materials — bags, films, boxes. From 1 kg to large quantities."
+
+msgid "Фільтр за категорією"
+msgstr "Filter by Category"
+
+msgid "Усі"
+msgstr "All"
+
+msgid "Товарів у цій категорії поки немає."
+msgstr "No products in this category yet."
+
+msgid "Показати всі"
+msgstr "Show All"
+
+msgid "Не знайшли потрібне?"
+msgstr "Didn't find what you need?"
+
+msgid "Ми виготовляємо упаковку на замовлення за вашими розмірами та дизайном."
+msgstr "We manufacture packaging to order by your sizes and design."
+
+msgid "Замовити індивідуально"
+msgstr "Order Custom"
+
+msgid "Опис продукту"
+msgstr "Product Description"
+
+msgid "Схожі товари"
+msgstr "Related Products"
+
+msgid "Замовити / Дізнатися ціну"
+msgstr "Order / Get Price"
+
+msgid "Зображення товару"
+msgstr "Product Images"
+
+msgid "Магнум — Виробництво упаковки"
+msgstr "Magnum — Packaging Production"
+
+msgid "Корпорація Магнум — виробництво якісного пакування, пакетів та плівки. Дніпро. Замовте індивідуальне рішення для вашого бізнесу."
+msgstr "Magnum Corporation — production of quality packaging, bags and film. Dnipro. Order an individual solution for your business."
+
+msgid "Статистика компанії"
+msgstr "Company Statistics"
+
+msgid "Ваше ім'я *"
+msgstr "Your name *"
+
+msgid "Телефон *"
+msgstr "Phone *"
+
+msgid "Ваше повідомлення або запитання..."
+msgstr "Your message or question..."
+
+msgid "Інформація про компанію"
+msgstr "Company Information"
+
+msgid "Телефон"
+msgstr "Phone"
+
+msgid "Адреса"
+msgstr "Address"
+
+msgid "Місто"
+msgstr "City"
+
+msgid "Заявки"
+msgstr "Requests"
+
+msgid "Ім'я"
+msgstr "Name"
+
+msgid "Повідомлення"
+msgstr "Message"
+
+msgid "Оброблено"
+msgstr "Processed"
+
+msgid "Дата"
+msgstr "Date"
+
+msgid "Категорія"
+msgstr "Category"
+
+msgid "Категорії"
+msgstr "Categories"
+
+msgid "Назва"
+msgstr "Name"
+
+msgid "Slug"
+msgstr "Slug"
+
+msgid "Опис"
+msgstr "Description"
+
+msgid "Порядок"
+msgstr "Order"
+
+msgid "Активна"
+msgstr "Active"
+
+msgid "Товар"
+msgstr "Product"
+
+msgid "Товари"
+msgstr "Products"
+
+msgid "Короткий опис"
+msgstr "Short description"
+
+msgid "Повний опис"
+msgstr "Full description"
+
+msgid "Головне фото"
+msgstr "Main photo"
+
+msgid "Артикул (SKU)"
+msgstr "SKU"
+
+msgid "Бренд"
+msgstr "Brand"
+
+msgid "Ціна"
+msgstr "Price"
+
+msgid "Валюта"
+msgstr "Currency"
+
+msgid "Наявність"
+msgstr "Availability"
+
+msgid "Meta Title"
+msgstr "Meta Title"
+
+msgid "Meta Description"
+msgstr "Meta Description"
+
+msgid "Meta Keywords"
+msgstr "Meta Keywords"
+
+msgid "Активний"
+msgstr "Active"
+
+msgid "Створено"
+msgstr "Created"
+
+msgid "Оновлено"
+msgstr "Updated"
+
+msgid "Зображення"
+msgstr "Image"
+
+msgid "Alt текст"
+msgstr "Alt text"
+
+msgid "В наявності"
+msgstr "In Stock"
+
+msgid "Немає в наявності"
+msgstr "Out of Stock"
+
+msgid "Під замовлення"
+msgstr "Pre-Order"
+
+msgid "Основна інформація"
+msgstr "Basic Information"
+
+msgid "Ціна та наявність"
+msgstr "Price & Availability"
+
+msgid "Публікація"
+msgstr "Publication"
