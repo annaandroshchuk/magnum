@@ -117,7 +117,8 @@
     <h2 class="section-title" id="catalog-preview-title">{% trans "Популярна продукція" %}</h2>
     <p class="section-subtitle">{% trans "Замовляйте безпосередньо у виробника — без посередників" %}</p>
   </div>
-  <div class="preview-strip">
+  <div class="preview-strip-wrap">
+    <div class="preview-strip">
     {% for product in featured %}
     <a href="{{ product.get_absolute_url }}" class="preview-card">
       {% if product.image %}
@@ -149,6 +150,7 @@
       </div>
     </a>
     {% endfor %}
+    </div>
   </div>
   <div class="container">
     <div class="catalog-preview__footer">

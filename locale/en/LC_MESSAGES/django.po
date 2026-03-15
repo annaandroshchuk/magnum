@@ -50,6 +50,9 @@ msgstr "Quality Packaging Production"
 msgid "Всі права захищені."
 msgstr "All rights reserved."
 
+msgid "Корпорація Магнум"
+msgstr "Magnum Corporation"
+
 msgid "Головний банер"
 msgstr "Main Banner"
 
@@ -121,6 +124,9 @@ msgstr "More Details"
 
 msgid "Весь каталог"
 msgstr "Full Catalog"
+
+msgid "Наступна сторінка"
+msgstr "Next page"
 
 msgid "Про корпорацію"
 msgstr "About the Corporation"

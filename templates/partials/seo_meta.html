@@ -7,7 +7,7 @@
 <meta name="description" content="{{ meta_description|default:'' }}">
 {% if product %}<meta name="keywords" content="{{ product.meta_keywords }}">{% endif %}
 <meta name="robots" content="index, follow">
-<meta name="author" content="Корпорація Магнум">
+<meta name="author" content="{% trans 'Корпорація Магнум' %}">
 
 <link rel="canonical" href="{{ request.build_absolute_uri }}">
 
@@ -21,7 +21,7 @@
 <meta property="og:description" content="{{ meta_description|default:'' }}">
 <meta property="og:url" content="{{ request.build_absolute_uri }}">
 <meta property="og:locale" content="{% if CURRENT_LANG == 'uk' %}uk_UA{% else %}en_US{% endif %}">
-<meta property="og:site_name" content="Корпорація Магнум">
+<meta property="og:site_name" content="{% trans 'Корпорація Магнум' %}">
 {% block og_image %}
 <meta property="og:image" content="{{ request.scheme }}://{{ request.get_host }}{% static 'img/og-default.jpg' %}">
 {% endblock %}
@@ -34,7 +34,7 @@
 {
   "@context": "https://schema.org",
   "@type": "Organization",
-  "name": "Корпорація Магнум",
+  "name": "{% trans 'Корпорація Магнум' %}",
   "url": "{{ request.scheme }}://{{ request.get_host }}",
   "logo": "{{ request.scheme }}://{{ request.get_host }}{% static 'img/logo.svg' %}",
   "contactPoint": {
@@ -46,8 +46,8 @@
   },
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "вул. Волинська, 46",
-    "addressLocality": "Дніпро",
+    "streetAddress": "{% if CURRENT_LANG == 'en' %}46 Volynska St{% else %}вул. Волинська, 46{% endif %}",
+    "addressLocality": "{% if CURRENT_LANG == 'en' %}Dnipro{% else %}Дніпро{% endif %}",
     "postalCode": "49102",
     "addressCountry": "UA"
   },

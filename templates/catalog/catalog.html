@@ -92,7 +92,7 @@
               {% if product.availability == 'PreOrder' %}product-row__avail--pre{% endif %}
             ">{{ product.get_availability_display }}</span>
           </div>
-          <a href="{{ product.get_absolute_url }}" class="btn btn--sm btn--outline">
+          <a href="{{ product.get_absolute_url }}" class="product-row__cta btn btn--sm btn--outline">
             {% trans "Детальніше" %} →
           </a>
         </div>

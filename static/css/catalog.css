@@ -169,6 +169,13 @@
 .product-row__avail--out { background: #f8d7da; color: #721c24; }
 .product-row__avail--pre { background: #fff3cd; color: #856404; }
 
+.product-row__cta {
+  padding: 0.35rem 1rem;
+  font-size: 0.8125rem;
+  min-height: 32px;
+  align-self: flex-start;
+}
+
 @media (min-width: 640px) {
   .product-row {
     flex-direction: row;
